@@ -1,0 +1,51 @@
+.App {
+	text-align: center;
+}
+body {
+	background-color: #eee;
+}
+input {
+	width: 250px;
+	height: 40px;
+	box-shadow: 0 0 8px gray;
+	border: none;
+	padding: 0 10px;
+	margin: 0 10px;
+	border-radius: 5px;
+	background: white;
+	outline: none;
+	font-weight: 550;
+	font-size: 16px;
+	border-bottom: 2px solid white;
+	border-top: 2px solid white;
+}
+input:hover {
+	border-bottom: 2px solid blue;
+	border-top: 2px solid blue;
+	box-shadow: 0 0 15px #5a5a5a;
+}
+button {
+	width: 100px;
+	height: 40px;
+	border: none;
+	box-shadow: 0 0 10px gray;
+	border-radius: 5px;
+	background: green;
+	color: white;
+	outline: none;
+}
+button:hover {
+	background: rgb(0, 80, 0);
+}
+.card {
+	padding: 25px;
+	width: fit-content;
+	margin: 20px auto;
+	background: #fff9f9;
+	border-radius: 5px;
+	box-shadow: 0 0 7px #a8a8a8;
+	border-bottom: 2px solid #888888;
+}
+.card:hover {
+	box-shadow: 0 0 10px #7e7c7c;
+}
