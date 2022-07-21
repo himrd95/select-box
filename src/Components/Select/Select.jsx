@@ -31,7 +31,6 @@ const Select = ({
 		setSelectedItems(true);
 
 		const { checked } = e.target;
-		console.log(checked, 'check', it);
 		checked
 			? setSelected([...selected, it])
 			: setSelected(
@@ -46,7 +45,9 @@ const Select = ({
 	const handleSelectAll = (e, val) => {
 		setSelectedItems(false);
 
-		const boxes = document.querySelectorAll('#checkbox');
+		const boxes = document.querySelectorAll(
+			`#${label.replaceAll(' ', '-')}`,
+		);
 		for (let i = 0; i < boxes.length; i++) {
 			boxes[i].checked = val;
 		}
@@ -73,8 +74,8 @@ const Select = ({
 
 			{open && (
 				<div className='container'>
-					<div className='option'>
-						{multiselect && (
+					{multiselect && (
+						<div className='option'>
 							<span className='checkbox'>
 								<input
 									checked={checkedAll}
@@ -82,20 +83,23 @@ const Select = ({
 									onChange={(e) => handleSelectAll(e, true)}
 								/>
 							</span>
-						)}
-						<span>Select all</span>
-					</div>
+							<span> Select all</span>
+						</div>
+					)}
 					{array?.map((item) => (
 						<div className='option'>
-							{multiselect && (
-								<span className='checkbox'>
-									<input
-										id='checkbox'
-										type='checkbox'
-										onChange={(e) => handleSelect(e, item)}
-									/>
-								</span>
-							)}
+							{/* {multiselect && ( */}
+							<span className='checkbox'>
+								<input
+									id={label.replaceAll(' ', '-')}
+									type='checkbox'
+									onChange={(e) => handleSelect(e, item)}
+									disabled={
+										!multiselect && selected.length > 0 ? true : false
+									}
+								/>
+							</span>
+							{/* )} */}
 							<span>
 								{typeof item === 'string' ? item : item.title}
 							</span>

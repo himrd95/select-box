@@ -19,9 +19,10 @@ const Home = () => {
 				multiselect={true}
 			/>
 			<Select
-				label='Select the color'
+				label='Select the course'
 				data={components}
-				searchable={false}
+				searchable={true}
+				multiselect={false}
 			/>
 		</div>
 	);
