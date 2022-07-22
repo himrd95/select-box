@@ -25,6 +25,7 @@ const Login = ({ handleLoginState }) => {
 	};
 
 	const handleLogin = () => {
+		emailCheck();
 		if (payload.password === '') {
 			alert("Password can't be empty.");
 			return;
