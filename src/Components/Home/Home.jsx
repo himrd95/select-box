@@ -18,12 +18,12 @@ const Home = () => {
 				data={colors}
 				multiselect={true}
 			/>
-			<Select
+			{/* <Select
 				label='Select the course'
 				data={components}
 				searchable={true}
 				multiselect={false}
-			/>
+			/> */}
 		</div>
 	);
 };
